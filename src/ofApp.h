@@ -20,6 +20,11 @@ public:
     double sample, freq, modIndex, modFrequencyX, modFrequencyY;
     double outputs[2];
     
+    
+    double foldBack(double in, double threshold);
+    
+    double thres = 0.3;
+    
     maxiOsc osc, mod;
     maxiOsc osc2, osc3,osc4, osc5;
     maxiMix mix;
@@ -32,6 +37,8 @@ public:
     ofParameter<float> freqs1;
     ofParameter<float> freqs2;
     ofParameter<float> multi;
-     ofParameter<float> ampMulti;
+    ofParameter<float> ampMulti;
+    ofParameter<float> threshold;
+    ofParameter<bool> distOn;
     
 };
