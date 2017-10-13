@@ -25,6 +25,9 @@ public:
     maxiMix mix;
     maxiEnv env;
     
+    
+    maxiOsc myOsc, myOsc2, myOsc3, myOsc4, myOsc5;
+    
     ofxPanel gui;
     ofParameter<float> freqs1;
     ofParameter<float> freqs2;

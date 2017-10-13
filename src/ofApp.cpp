@@ -44,10 +44,11 @@ void ofApp::audioOut(float * output, int bufferSize, int nChannels) {
     
     for (int i = 0; i < bufferSize; i++) {
         
+    double sum1= myOsc.sinewave(myOsc4.sinewave(myOsc5.sinewave(40)*440)*myOsc2.sinewave(myOsc3.sinewave(20)*160)*150);
+        
      double sum =  osc.sinewave(osc2.sinewave(osc3.sinewave(freqs1) * multi)
                                 * osc4.sinewave(osc5.sinewave(freqs2) * modFrequencyY) * modFrequencyX);
-        
-        mix.stereo(sum, outputs, 0.5);
+        sum+=sum1;
         
         output[i * nChannels] = sum * ampMulti;
         output[i * nChannels + 1] = output[ i * nChannels];
